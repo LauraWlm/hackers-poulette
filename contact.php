@@ -1,70 +1,43 @@
-<!DOCTYPE html>
-<html>
- 
-<head>
-    <title>Hackers Poulette</title>
-</head>
- 
-<body>
-
-
 <?php
-// Récupération des données du formulaire
-$name = $_POST['name'];
-$firstname = $_POST['firstname'];
-$email = $_POST['email'];
-$comment = $_POST['comment'];
+require('connexion.php');
+// Get form data
+if (isset($_POST['name']) &&
+    isset($_POST['firstname']) &&
+    isset($_POST['email']) &&
+    isset($_POST['comment'])) {
 
-if (empty($_POST['name']) || empty($_POST['firstname']) || empty($_POST['email']) || empty($_POST['comment'])) {
-    echo '<p class="erreur">Attention, vous devez remplir tous les champs</p>';
-} else {
-    require_once("connexion.php");
+    // Server-side data validation
+    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+    $firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING);
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    $comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_STRING);
     
-// Validation des données
+    // Check if all fields are filled
+    if (empty($name) || empty($firstname) || empty($email) || empty($comment)) {
+        echo '<p class="error">Please fill in all fields</p>';
+    } else {
+        // Prepare insert statement
+        $sql = "INSERT INTO contact_form (name, firstname, emailAddress, comment)
+                VALUES (:name, :firstname, :email, :comment)";
+        $stmt = $pdo->prepare($sql);
 
-if (empty($name) || strlen($name) < 2 ||  strlen($name) > 255) {
-    die("Nom incorrect");
-  }
-  
-  if (empty($firstname) ||  strlen($firstname) < 2 ||  strlen($firstname) > 255) {
-    die("Prénom incorrect");
-  }
-  
-  if (empty($email) ||  strlen($email) < 2 || strlen($email) > 255 || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    die("Adresse email incorrecte");
-  }
-  
-  if (empty($comment) || strlen($comment) < 255 || strlen($comment) > 1000) {
-    die("Commentaire incorrecte minimum 255 caractères");
-  }
-  
-  $name = preg_replace('/[^a-zA-Z0-9\s]/', '', $name);
-  $firstname = preg_replace('/[^a-zA-Z0-9\s]/', '', $firstname);
-  $email = preg_replace('/[^a-zA-Z0-9@.]/', '', $email);
-  $comment = preg_replace('/[^a-zA-Z0-9\s.?,!:-]/', '', $comment);
+        // Bind values
+        $stmt->bindValue(':name', $name, PDO::PARAM_STR);
+        $stmt->bindValue(':firstname', $firstname, PDO::PARAM_STR);
+        $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+        $stmt->bindValue(':comment', $comment, PDO::PARAM_STR);
 
-    // on écrit la requête sql
-    $sql = 'INSERT INTO contact_form(name, firstname, emailAddress, comment) VALUES(' . $pdo->quote($_POST['name']) . ','
-        . $pdo->quote($_POST['firstname']) . ','
-        . $pdo->quote($_POST['email']) . ','
-        . $pdo->quote($_POST['comment']) . ')';
+        // Execute statement
+        $stmt->execute();
 
-    // on insère les informations du formulaire dans la table
-    try {
-        $pdo->query($sql);
-    } catch (Exception $e) {
-        echo '<p class="erreur">', $e->getMessage(), '</p>';
+        // Message de confirmation
+        echo "Votre formulaire a été envoyé avec succès.";
+
+        // Redirect to confirmation page
+        header('Location: index.php');
+        exit;
     }
-    // on affiche le résultat pour le visiteur
-    echo '<span class="laclasse qui va bien">Votre message à bien été envoyé !</span>';
 }
 ?>
-</body>
- 
-</html>
-
-
-<?php
-
 
 
