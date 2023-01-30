@@ -7,14 +7,14 @@
 <body>
 	<center>
 		<h2>Contact us</h2>
-		<form method="post" action="contact.php">
+		<form method="POST" action="contact.php">
 
         <label for="name">Your name:</label> <br>
-        <input type="text" name="name" id="name" required minlength="2" maxlength="255" />
+        <input type="text" name="name" id="name" required minlength="2" maxlength="255" /><br>
 
         
-        <label for="firstname">Your name:</label><br>
-        <input type="text" name="firstname" id="firstname" required minlength="2" maxlength="255" />
+        <label for="firstname">Your firstname:</label><br>
+        <input type="text" name="firstname" id="firstname" required minlength="2" maxlength="255" /><br>
  
        
         <label for="email">Email address:</label><br>
