@@ -1,6 +1,6 @@
 # hackers-poulette
 
-## La mission
+## La mission  
 La société Hackers Poulette™ vend des kits d'accessoires Raspberry Pi pour construire le vôtre. Ils veulent permettre à leurs utilisateurs de contacter leur équipe de support. Votre mission est de créer un formulaire de "contact support" en ligne entièrement fonctionnel, en PHP . Il doit afficher un formulaire de contact et traiter la réponse reçue (assainir, valider, répondre à l'utilisateur).
 
 La forme
@@ -17,8 +17,8 @@ requis, au moins 2 caractères, max 255, doit être une adresse e-mail valide
 
 * commenter
 requis, au moins 250 caractères max, max 1000 caractères
---------
-## 🌱Fonctionnalités indispensables
+
+## 🌱Fonctionnalités indispensables  
 Utilisation de PHP
 * Base de données avec connexion PDO
 * Le code html du formulaire doit être sémantiquement valide et accessible
@@ -28,9 +28,9 @@ Utilisation de PHP
 * Une fois le formulaire validé, les données doivent être envoyées à la base de données.
 * Prévention du spam à l'aide d' un pot de miel ou d'un captcha
 -------- 
-## Rendu 
+## Rendu  
 
-![image du formulaire](hackers-poulette\assets\css\image\FormContactUs.jpg)
+![image du formulaire](./assets/image/FormContactUs.jpg)
 
 
 
