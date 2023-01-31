@@ -41,7 +41,7 @@ if (empty($_POST["firstname"])) {
     $comment = "";
   } else {
     $comment = test_input($_POST["comment"]);
-    if (!preg_match("/^.{255,1000}$/",$comment)) {
+    if (!preg_match("/^.{250,1000}$/",$comment)) {
         $commentErr = "Comment must contain at least 255 characters, and a maximum of 1000";
     }
   }

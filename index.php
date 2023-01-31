@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>  
-
+    <main>
 <?php
 
 include('connexion.php');
@@ -17,41 +17,29 @@ include('validate.php');
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
   
 <label for="name">Name:</label> <br>
-<span class="error">* <?php echo $nameErr;?></span><br>
 <input type="text" name="name" id="name">
+<span class="error">* <br><?php echo $nameErr;?></span>
 <br>
 
 <label for="firstname">Your firstname:</label><br>
-<span class="error">* <?php echo $firstnameErr;?></span><br>
 <input type="text" name="firstname" id='firstname' >
+<span class="error">* <br><?php echo $firstnameErr;?></span>
 <br>
 
 
 <label for="email">E-mail:</label><br> 
-<span class="error">* <?php echo $emailErr;?></span><br>
 <input type="text" name="email" id="email">
+<span class="error">* <br><?php echo $emailErr;?></span>
 <br>
 
 <label for="comment">Comment:</label><br>
-<span class="error">* <?php echo $commentErr;?></span><br>
-<textarea name="comment" id="comment" rows="5" cols="40" ></textarea>
+<textarea name="comment" id="comment" rows="10" cols="55" ></textarea>
+<span class="error">* <br><?php echo $commentErr;?></span>
 <br>
 
 <input type="submit" name="submit" value="Submit">  
 </form>
 
-
-<?php
-echo "<h2>Your Input:</h2>";
-echo $name;
-echo "<br>";
-echo $firstname;
-echo "<br>";
-echo $email;
-echo "<br>";
-echo $comment;
-
-?>
-
+</main>
 </body>
 </html>

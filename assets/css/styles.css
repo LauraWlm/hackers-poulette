@@ -4,8 +4,55 @@ body {
   justify-content: center;
   align-items: center;
   align-content: center;
+  text-align: center;
+  width: 100%;
+  height: auto;
 }
 
-.error {
-  color: #FF0000;
+main {
+  background-color: rgb(4, 17, 51);
+  padding: 1em;
+  border-radius: 2rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1.5rem;
+  color: rgb(146, 228, 248);
+  border: none;
+}
+main .error {
+  color: #ff006a;
+  font-size: 1.2rem;
+}
+main input[type=text] {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  outline: none;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  background-color: rgba(86, 81, 105, 0.5254901961);
+  color: rgb(146, 228, 248);
+}
+main input[type=submit] {
+  width: 40%;
+  padding: 12px 20px;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  background-color: rgba(86, 81, 105, 0.5254901961);
+  border: none;
+  color: rgb(146, 228, 248);
+}
+main textarea {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  outline: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: rgba(86, 81, 105, 0.5254901961);
+}
+main label {
+  font-weight: 700;
 }/*# sourceMappingURL=styles.css.map */
