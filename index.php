@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>  
 <html>
 <head>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>  
 
@@ -16,31 +16,28 @@ include('validate.php');
 <span class="error">* required field</span>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
   
-    <label for="name">Name:</label> <br>
+<label for="name">Name:</label> <br>
+<span class="error">* <?php echo $nameErr;?></span><br>
+<input type="text" name="name" id="name">
+<br>
 
-  <input type="text" name="name" id="name">
-  <span class="error">* <?php echo $nameErr;?></span>
-  <br><br>
-
-  <label for="firstname">Your firstname:</label><br>
-
-  <input type="text" name="firstname" id='firstname' >
-  <span class="error">* <?php echo $firstnameErr;?></span>
-  <br><br>
+<label for="firstname">Your firstname:</label><br>
+<span class="error">* <?php echo $firstnameErr;?></span><br>
+<input type="text" name="firstname" id='firstname' >
+<br>
 
 
-  <label for="email">E-mail:</label><br> 
-  
-  <input type="text" name="email" id="email">
-  <span class="error">* <?php echo $emailErr;?></span>
-  <br><br>
+<label for="email">E-mail:</label><br> 
+<span class="error">* <?php echo $emailErr;?></span><br>
+<input type="text" name="email" id="email">
+<br>
 
-  <label for="comment">Comment:</label><br>
-  
-  <textarea name="comment" id="comment" rows="5" cols="40" ></textarea>
-  <span class="error">* <?php echo $commentErr;?></span>
-  <br><br>
-  <input type="submit" name="submit" value="Submit">  
+<label for="comment">Comment:</label><br>
+<span class="error">* <?php echo $commentErr;?></span><br>
+<textarea name="comment" id="comment" rows="5" cols="40" ></textarea>
+<br>
+
+<input type="submit" name="submit" value="Submit">  
 </form>
 
 
