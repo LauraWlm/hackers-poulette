@@ -1,4 +1,5 @@
 <?php
+
 // Connect to database
 $host = 'localhost';
 $dbname = 'hackers-poulette';
