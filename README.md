@@ -27,14 +27,14 @@ Utilisation de PHP
 * Les données doivent être aseptisées et validées (côté serveur)
 * Une fois le formulaire validé, les données doivent être envoyées à la base de données.
 * Prévention du spam à l'aide d' un pot de miel ou d'un captcha
--------- 
+---
 ## Rendu  
 
 ![image du formulaire](./assets/image/FormContactUs.jpg)
 
 
 
---------
+---
 ## lien serveur 
 __Ne prend pas le localhost pour l'instant__
 
