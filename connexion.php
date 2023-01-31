@@ -1,7 +1,7 @@
 <?php
 
 // Connect to database
-$host = 'localhost';
+$host = '127.0.0.1 ';
 $dbname = 'hackers-poulette';
 $username = 'root';
 $password = '';
