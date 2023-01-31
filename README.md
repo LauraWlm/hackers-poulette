@@ -26,7 +26,7 @@ Utilisation de PHP
 * Le message d'erreur doit être lisible et utile aux utilisateurs.
 * Les données doivent être aseptisées et validées (côté serveur)
 * Une fois le formulaire validé, les données doivent être envoyées à la base de données.
-* Prévention du spam à l'aide d' un pot de miel ou d'un captcha
+* Prévention du spam à l'aide d' un honeypot ou d'un captcha
 ---
 ## Rendu  
 
